@@ -1,7 +1,7 @@
 <?php
 
 function university_post_types() {
-  // Event Post Type
+  // Event Post type
   register_post_type('event', array(
     'supports' => array('title', 'editor', 'excerpt'),
     'rewrite' => array('slug' => 'events'),
@@ -33,9 +33,10 @@ function university_post_types() {
     'menu_icon' => 'dashicons-awards'
   ));
 
+
   // Professor Post Type
   register_post_type('professor', array(
-    'supports' => array('title', 'editor'),
+    'supports' => array('title', 'editor', 'thumbnail'),
     'public' => true,
     'labels' => array(
       'name' => 'Professors',
@@ -46,6 +47,7 @@ function university_post_types() {
     ),
     'menu_icon' => 'dashicons-welcome-learn-more'
   ));
+
 }
 
 add_action('init', 'university_post_types');
